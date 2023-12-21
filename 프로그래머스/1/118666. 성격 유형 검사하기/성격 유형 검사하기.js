@@ -1,0 +1,42 @@
+const mbti = [
+    'RT', 'CF', 'JM', 'AN',
+    'TR', 'FC', 'MJ','NA'
+]
+
+const point = [-3, -2, -1, 0, 1, 2, 3]
+// - 문제 유형(-> mbti)과 선택지 별 얻을 수 있는 점수(->point)를 미리 정의한다.
+// - 성격 유형을 산출하기 위해 스코어를 계산할 때 배열을 8자리로 만들지 않고 4자리로 만든 뒤 부호를 보고 유형을 결정한다.
+// - test()를 통해 totalScore를 산출하며, getResult()를 통해 totalScore로 부터 성격 유형을 도출한다.
+// - test()에서는 문제 유형이 5번째 이상, 즉 +- 부호가 반대로 되어야 하는 문항의 경우 스코어의 부호를 바꾸어 더한다.
+
+const test = (survey,  choices) => {
+    const totalScore = [0, 0, 0, 0]
+    for (let i = 0; i < survey.length; i++) {
+        let idx = mbti.indexOf(survey[i])
+        let score = point[choices[i]-1]
+         if (idx >= 4) {
+             if (score > 0) score = -score
+             else score = 0-score
+             idx -= 4
+         }
+        totalScore[idx] += score
+     }
+    return totalScore
+}
+
+const getResult = (totalScore) => {
+    let result = ''
+    for (let i = 0; i < 4; i++) {
+        if (totalScore[i] > 0) {
+            result += mbti[i][1]
+        } else {
+            result += mbti[i][0]
+        }
+    }
+    return result
+}
+
+function solution(survey, choices) {
+    const totalScore = test(survey, choices)
+    return getResult(totalScore)
+}
