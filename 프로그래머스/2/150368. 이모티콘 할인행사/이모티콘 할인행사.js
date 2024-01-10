@@ -1,7 +1,7 @@
 // - 중복순열로 미리 가능한 할인율을 정의
 // - 유저별 buy, subscribe를 계산
 // - 할인율별 sell, user를 계산
-// - maxSell, maxUser와 비교
+// - sell, user를 maxSell, maxUser와 비교
 
 function solution(users, emoticons) {
     const discount = [10,20,30,40]
