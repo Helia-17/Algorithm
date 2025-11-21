@@ -1,6 +1,6 @@
 | 시작날짜 | 문제 | 솔루션 및 해결여부| 
 |--|--|--|
-| 2025.11.13(목) | [Mini-Max Sum](https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem) | ✅ [Link](https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/submissions/code/454055187)
+| 2025.11.13(목) | [Min-Max Sum](https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/problem) | ✅ [Link](https://www.hackerrank.com/challenges/three-month-preparation-kit-mini-max-sum/submissions/code/454055187)
 
 ```js
 function miniMaxSum(arr) {
